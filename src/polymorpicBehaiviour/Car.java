@@ -1,6 +1,6 @@
 package polymorpicBehaiviour;
 
-public class Car {
+public class Car implements Moveable{
 
     private int everythingThatCarHas;
 
@@ -9,4 +9,8 @@ public class Car {
     }
 
 
+    @Override
+    public void move() {
+
+    }
 }

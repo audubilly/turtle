@@ -7,10 +7,15 @@ public  abstract class Animal {
     public  abstract void move();
 //        System.out.println("animal walk");
 
+    Car car = new Car();
+
+
+
 
     public void eat(){
         System.out.println("Eat and smile");
     }
+
 
 
 

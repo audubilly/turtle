@@ -55,6 +55,8 @@ class TurtleTest {
         assertEquals(CurrentDirection.SOUTH, turtle.getCurrentDirection());
         turtle.turnRight();
         assertEquals(CurrentDirection.WEST, turtle.getCurrentDirection());
+        turtle.turnRight();
+        assertEquals(CurrentDirection.NORTH, turtle.getCurrentDirection());
     }
 
 
