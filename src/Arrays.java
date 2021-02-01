@@ -20,7 +20,7 @@ public class Arrays {
          }
 
 
-         int [][] grades = new int [3][4];
+//         int [][] grades = new int [3][4];
 
          int [][] scores = {
                  {70, 89, 98, 93},

@@ -1,2 +1,5 @@
-package TicTacToe;public enum BoardElements {
+package TicTacToe;
+
+public enum BoardElements {
+    X,Y,EMPTY
 }
