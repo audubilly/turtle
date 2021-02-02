@@ -41,6 +41,10 @@ public class TicTacToe {
        if(isBoardFull()) {
            throw new GameOverException();
        }
+        if (rowNumber> 9 ||  rowNumber< 1) {
+            throw new IllegalArgumentException("Grid position must be between 1 and 9");
+        }
+
         rowNumber -= 1;
         int row = rowNumber / 3;
         int col = rowNumber % 3;

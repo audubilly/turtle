@@ -11,11 +11,13 @@ class BoardTest {
     TicTacToe game;
 
 
+
     @BeforeEach
     void setUp() {
 
         board = new Board(3);
         game = new TicTacToe(board);
+
     }
 
     @AfterEach
@@ -90,6 +92,32 @@ class BoardTest {
         assertEquals(GameValue.O,game.getGameBoard().getGrid()[2][0]);
 
 
+    }
+    @Test
+    void testGameThrowsIllegalArgumentExceptionWhenUserPassesInOutOfRangeGridPosition() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.makeMove(17);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.makeMove(10);
+        });
+    }
+
+
+    @Test
+    void testThatGameCanThrowGameOverExceptionWhenAllGridsOnTheBoardIsFull() throws GameOverException{
+        game.makeMove(1);
+        game.makeMove(2);
+        game.makeMove(3);
+        game.makeMove(4);
+        game.makeMove(5);
+        game.makeMove(6);
+        game.makeMove(7);
+        game.makeMove(8);
+        game.makeMove(9);
+        assertThrows(GameOverException.class, () ->{
+            game.makeMove(9);
+        });
     }
 
 
