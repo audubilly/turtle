@@ -30,19 +30,19 @@ class BoardTest {
     @Test
     void testThatGridLimitIsEqualsToCollectedValueFromConstructor(){
         assertEquals(3, board.getGrid().length);
-        assertEquals(3, board.getGrid().length);
+        assertEquals(3, board.getGrid()[0].length);
     }
 
 
 
     @Test
     void testThatGameHasABoard(){
-        assertNotNull(game.getBoard());
+        assertNotNull(game.getGameBoard());
     }
 
     @Test
     void testThatBoardIsEmptyWhenInitialized(){
-        Board gameBoard = game.getBoard();
+        Board gameBoard = game.getGameBoard();
         GameValue [][] grid = gameBoard.getGrid();
         for(int row = 0; row < grid.length; row++){
             for(int column = 0; column < grid[row].length; column++){
@@ -50,6 +50,20 @@ class BoardTest {
             }
         }
 
+    }
+
+    @Test
+    void testThatPlayerCanPlaceValueOnTheBoard(){
+        game.makeMove(3);
+        game.makeMove(5);
+
+    }
+
+
+    @Test
+    void testThatTwoXValuesCannotBePlayedConsecutively(){
+        game.makeMove(4);
+        assertEquals(GameValue.X, game.getGameBoard().getGrid()[1][0]);
     }
 
 }
