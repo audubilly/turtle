@@ -121,4 +121,9 @@ class BoardTest {
     }
 
 
+    @Test
+    void testThatGameHasBeingWonIfPlayerPlaysHorizontalXValues() throws GameOverException{
+        game.makeMove(5);
+
+    }
 }
