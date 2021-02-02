@@ -53,7 +53,7 @@ class BoardTest {
     }
 
     @Test
-    void testThatPlayerCanPlaceValueOnTheBoard(){
+    void testThatPlayerCanPlaceValueOnTheBoard() throws GameOverException {
         game.makeMove(3);
         game.makeMove(5);
 
@@ -61,9 +61,36 @@ class BoardTest {
 
 
     @Test
-    void testThatTwoXValuesCannotBePlayedConsecutively(){
+    void testThatTwoXValuesCannotBePlayedConsecutively() throws GameOverException {
         game.makeMove(4);
         assertEquals(GameValue.X, game.getGameBoard().getGrid()[1][0]);
+
+        game.makeMove(3);
+        assertEquals(GameValue.O, game.getGameBoard().getGrid()[0][2]);
+
     }
+
+    @Test
+    void testThatGameCanPlaceAnyValueOnTheBoard() throws GameOverException{
+        game.makeMove(4);
+        assertEquals(GameValue.X, game.getGameBoard().getGrid()[1][0]);
+        game.makeMove(6);
+        assertEquals(GameValue.O, game.getGameBoard().getGrid()[1][2]);
+    }
+
+    @Test
+    void testThatPlayerCannotPlayTwoConsecutiveXValues()throws GameOverException{
+        game.makeMove(5);
+        assertEquals(GameValue.X,game.getGameBoard().getGrid()[1][1]);
+        game.makeMove(6);
+        assertNotEquals(GameValue.X,game.getGameBoard().getGrid()[1][2]);
+        game.makeMove(8);
+        assertEquals(GameValue.X,game.getGameBoard().getGrid()[2][1]);
+        game.makeMove(7);
+        assertEquals(GameValue.O,game.getGameBoard().getGrid()[2][0]);
+
+
+    }
+
 
 }

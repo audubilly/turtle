@@ -16,7 +16,7 @@ public class TicTacToe {
         return gameBoard;
     }
 
-    public boolean isWasLastValuePlayedX() {
+    public boolean WasLastValuePlayedX() {
         return wasLastValuePlayedX;
     }
 
@@ -24,9 +24,23 @@ public class TicTacToe {
         return gameWon;
     }
 
+    public boolean isBoardFull(){
+        GameValue[][] grid = gameBoard.getGrid();
+        for (int row = 0; row < grid.length; row++) {
+            for (int col = 0; col < grid[row].length; col++) {
+                if (grid[row][col] == GameValue.EMPTY) {
+                    return false;
+                }
+            }
+        }
+            return true;
+    }
 
 
-    public void makeMove(int rowNumber) {
+    public void makeMove(int rowNumber) throws GameOverException{
+       if(isBoardFull()) {
+           throw new GameOverException();
+       }
         rowNumber -= 1;
         int row = rowNumber / 3;
         int col = rowNumber % 3;
