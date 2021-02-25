@@ -60,5 +60,11 @@ public class TicTacToe {
         }
     }
 
+
+    public void displayBoard() {
+        isGameWon();
+        gameBoard.displayBoard();
     }
+}
+
 
