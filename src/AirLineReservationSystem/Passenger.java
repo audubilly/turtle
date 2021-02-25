@@ -27,6 +27,6 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return String.format("%s %s",getFirstName(),getLastName());
+        return String.format("Dear %s %s %n BoardingPass Details: ",getFirstName(),getLastName());
     }
 }

@@ -30,6 +30,7 @@ public class AirlineSystem {
         }
     }
 
+
     private void bookFirstClassSeats(Passenger passenger) {
         for(int counter = 0; counter < 5; counter++){
             if(!seats[counter]){
