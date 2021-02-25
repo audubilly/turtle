@@ -1,29 +1,27 @@
 package AirLineReservationSystem;
 
-import java.util.Date;
-
 public class BoardingPass {
-    private String depatureCity;
+    private String departureCity;
     private String arrivalCity;
-    private String depatureDate;
+    private String departureDate;
     private String arrivalDate;
-    private String depatureTime;
+    private String departureTime;
 
-    public BoardingPass(String depatureCity, String arrivalCity, String depatureDate,
-                        String arrivalDate, String depatureTime) {
-        this.depatureCity = depatureCity;
+    public BoardingPass(String departureCity, String arrivalCity, String departureDate,
+                        String arrivalDate, String departureTime) {
+        this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
-        this.depatureDate = depatureDate;
+        this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
-        this.depatureTime = depatureTime;
+        this.departureTime = departureTime;
     }
 
-    public String getDepatureCity() {
-        return depatureCity;
+    public String getDepartureCity() {
+        return departureCity;
     }
 
-    public void setDepatureCity(String depatureCity) {
-        this.depatureCity = depatureCity;
+    public void setDepartureCity(String departureCity) {
+        this.departureCity = departureCity;
     }
 
     public String getArrivalCity() {
@@ -34,12 +32,12 @@ public class BoardingPass {
         this.arrivalCity = arrivalCity;
     }
 
-    public String getDepatureDate() {
-        return depatureDate;
+    public String getDepartureDate() {
+        return departureDate;
     }
 
-    public void setDepatureDate(String depatureDate) {
-        this.depatureDate = depatureDate;
+    public void setDepartureDate(String departureDate) {
+        this.departureDate = departureDate;
     }
 
     public String getArrivalDate() {
@@ -50,17 +48,17 @@ public class BoardingPass {
         this.arrivalDate = arrivalDate;
     }
 
-    public String getDepatureTime() {
-        return depatureTime;
+    public String getDepartureTime() {
+        return departureTime;
     }
 
-    public void setDepatureTime(String depatureTime) {
-        this.depatureTime = depatureTime;
+    public void setDepartureTime(String departureTime) {
+        this.departureTime = departureTime;
     }
 
     @Override
     public String toString() {
-        return String.format("%nDepature City : %s%n Arrival city: %s%n Departure Date : %s%n Arrival Date: %s%n Departure Time: %s", getDepatureCity(),getArrivalCity(),
-                getDepatureDate(),getArrivalDate(),getDepatureTime());
+        return String.format("%nDeparture City : %s%n Arrival city: %s%n Departure Date : %s%n Arrival Date: %s%n Departure Time: %s", getDepartureCity(),getArrivalCity(),
+                getDepartureDate(),getArrivalDate(), getDepartureTime());
     }
 }

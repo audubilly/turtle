@@ -4,8 +4,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class AirlineSystemTest {
@@ -65,17 +63,17 @@ class AirlineSystemTest {
 
     @Test
     void testThatBoardingPassCanBeGotten() {
-        boardingPass.setDepatureCity("lagos");
-        assertEquals("lagos", boardingPass.getDepatureCity());
+        boardingPass.setDepartureCity("lagos");
+        assertEquals("lagos", boardingPass.getDepartureCity());
 
         boardingPass.setArrivalCity("Abuja");
         assertEquals("Abuja", boardingPass.getArrivalCity());
 
-        boardingPass.setDepatureTime("7am");
-        assertEquals("7am", boardingPass.getDepatureTime());
+        boardingPass.setDepartureTime("7am");
+        assertEquals("7am", boardingPass.getDepartureTime());
 
-        boardingPass.setDepatureDate("2021-12-11");
-        assertEquals("2021-12-11",boardingPass.getDepatureDate());
+        boardingPass.setDepartureDate("2021-12-11");
+        assertEquals("2021-12-11",boardingPass.getDepartureDate());
 
         boardingPass.setArrivalDate("2021-12-11");
         assertEquals("2021-12-11",boardingPass.getArrivalDate());
@@ -94,6 +92,31 @@ class AirlineSystemTest {
         airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
         System.out.println(airlineSystem.getBoardingPass());
 
+    }
+    @Test
+    void testThatFlightSeatsCanBeAlternatedFromEconomyToFirstClassWhenFull(){
+        airlineSystem.bookSeats(FlightTypes.ECONOMY,passenger);
+        airlineSystem.bookSeats(FlightTypes.ECONOMY,passenger);
+        airlineSystem.bookSeats(FlightTypes.ECONOMY,passenger);
+        airlineSystem.bookSeats(FlightTypes.ECONOMY,passenger);
+        airlineSystem.bookSeats(FlightTypes.ECONOMY,passenger);
+        airlineSystem.bookSeats(FlightTypes.ECONOMY,passenger);
 
+    }
+
+    @Test
+    void testThatFlightSeatsCanBeAlternatedWhenFromFirstClassToEconomyClassFull(){
+        airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
+        airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
+        airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
+        airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
+        airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
+        airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
+
+    }
+
+    @Test
+    void testThatExceptionsAreThrown(){
+        assertThrows(AirlineSystem.FlightSeatsDoesNotExists.class,()->airlineSystem.getSeatsBySeatNumber(11));
     }
 }

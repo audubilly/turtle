@@ -1,12 +1,18 @@
 package AirLineReservationSystem;
 
+import java.util.InputMismatchException;
+
 public class Passenger {
     private String firstName;
     private String lastName;
 
     public Passenger(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        try {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        } catch (InputMismatchException exception) {
+            System.out.println("invalid input, please Enter Name in words");
+        }
     }
 
     public String getFirstName() {
@@ -14,7 +20,11 @@ public class Passenger {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        try {
+            this.firstName = firstName;
+        } catch (InputMismatchException exception) {
+            System.out.println("invalid input, please Enter name in words");
+        }
     }
 
     public String getLastName() {
@@ -22,7 +32,11 @@ public class Passenger {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        try {
+            this.lastName = lastName;
+        } catch (InputMismatchException exception) {
+            System.out.println("invalid input, please Enter name in words");
+        }
     }
 
     @Override
