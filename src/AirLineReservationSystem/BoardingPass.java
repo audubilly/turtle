@@ -60,7 +60,7 @@ public class BoardingPass {
 
     @Override
     public String toString() {
-        return String.format("%nDepature City : %s%n Arrival city: %s%n Departure Date : %s%n Depature Date: %s%n Departure Time: %s", getDepatureCity(),getArrivalCity(),
+        return String.format("%nDepature City : %s%n Arrival city: %s%n Departure Date : %s%n Arrival Date: %s%n Departure Time: %s", getDepatureCity(),getArrivalCity(),
                 getDepatureDate(),getArrivalDate(),getDepatureTime());
     }
 }

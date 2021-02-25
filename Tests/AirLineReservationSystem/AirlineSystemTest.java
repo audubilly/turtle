@@ -38,7 +38,6 @@ class AirlineSystemTest {
 
     @Test
     void testThatASeatCanBeBooked() {
-//        airlineSystem.bookSeats(FlightTypes.ECONOMY);
         airlineSystem.bookSeats(FlightTypes.FIRSTCLASS, passenger);
         assertTrue(airlineSystem.getSeats()[0]);
         airlineSystem.bookSeats(FlightTypes.FIRSTCLASS, passenger);
@@ -82,5 +81,19 @@ class AirlineSystemTest {
         assertEquals("2021-12-11",boardingPass.getArrivalDate());
 
         System.out.println(passenger.toString() + boardingPass.toString());
+    }
+
+    @Test
+    void testThatWeCanCreatePassengersAndBookSeats(){
+
+        passenger = new Passenger("john", "Wick");
+
+        airlineSystem.bookSeats(FlightTypes.ECONOMY,passenger);
+        System.out.println(airlineSystem.getBoardingPass());
+
+        airlineSystem.bookSeats(FlightTypes.FIRSTCLASS,passenger);
+        System.out.println(airlineSystem.getBoardingPass());
+
+
     }
 }
