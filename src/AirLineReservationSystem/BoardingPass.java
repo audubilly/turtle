@@ -58,7 +58,8 @@ public class BoardingPass {
 
     @Override
     public String toString() {
-        return String.format("%nDeparture City : %s%n Arrival city: %s%n Departure Date : %s%n Arrival Date: %s%n Departure Time: %s", getDepartureCity(),getArrivalCity(),
+        return String.format("%nDeparture City : %s%n Arrival city: %s%n Departure Date : " +
+                        "%s%n Arrival Date: %s%n Departure Time: %s", getDepartureCity(),getArrivalCity(),
                 getDepartureDate(),getArrivalDate(), getDepartureTime());
     }
 }

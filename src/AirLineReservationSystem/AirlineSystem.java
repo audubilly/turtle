@@ -72,7 +72,7 @@ public class AirlineSystem {
 
     private void bookFirstClassSeats(Passenger passenger) {
         for(int counter = 0; counter < 5; counter++){
-            if(!seats[counter]){
+            if(seats[counter] == false){
                 seats[counter] = true;
                 firstClassBoardingPassPrinter(counter,passenger);
                 firstClassSeatMonitor++;
